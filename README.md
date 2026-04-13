@@ -42,3 +42,40 @@ All endpoints except `/auth/*` require:
 ```
 Authorization: Bearer <token>
 ```
+
+### Auth
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/auth/register` | Register — body: `{ name, email, password }` |
+| POST | `/auth/login` | Login — body: `{ email, password }` |
+
+Both return `{ token, user }`.
+
+### Users
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/users/me` | Current user |
+| GET | `/users` | All users |
+
+### Projects
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/projects` | List your projects |
+| POST | `/projects` | Create — body: `{ name, description? }` |
+| GET | `/projects/:id` | Get project + tasks |
+| PATCH | `/projects/:id` | Update — body: `{ name?, description? }` |
+| DELETE | `/projects/:id` | Delete (owner only) |
+
+### Tasks
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/projects/:id/tasks` | List tasks (filter: `?status=todo&assignee=<uuid>`) |
+| POST | `/projects/:id/tasks` | Create — body: `{ title, description?, status?, priority?, assignee_id?, due_date? }` |
+| PATCH | `/tasks/:id` | Update — any task fields |
+| DELETE | `/tasks/:id` | Delete |
+
+**Errors:**
+```json
+{ "error": "validation failed", "fields": { "email": "is invalid" } }
+```
+
