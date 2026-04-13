@@ -9,7 +9,7 @@ A project and task management app. Built with React + TypeScript (frontend), Nod
 > Docker is the only requirement.
 
 ```bash
-git clone https://github.com/your-name/ag-project
+git clone https://github.com/Aditii-Gupta/Taskflow-Aditi.git
 cd ag-project
 cp .env.example .env
 docker compose up
