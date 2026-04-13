@@ -10,7 +10,7 @@ A project and task management app. Built with React + TypeScript (frontend), Nod
 
 ```bash
 git clone https://github.com/Aditii-Gupta/Taskflow-Aditi.git
-cd ag-project
+cd Taskflow-Aditi-main
 cp .env.example .env
 docker compose up
 ```
